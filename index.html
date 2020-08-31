@@ -18,42 +18,118 @@
     <h1 class="text-center">Baby Busters Task Manager App</h1>
 
     <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Task Name</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Task Name">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Task Name" aria-label="Text input with segmented dropdown button">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-outline-secondary">Priority</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">High</a>
+              <a class="dropdown-item" href="#">Medium</a>
+              <a class="dropdown-item" href="#">Low</a>
+            </div>
+          </div>
         </div>
-          <div class="form-group">
-          <label for="exampleFormControlTextarea1">Description</label>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"></label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Priority</label>
+     
+        <div class="form-group"></label>
           <select class="form-control" id="exampleFormControlSelect1">
-            <option>High</option>
-            <option>Medium</option>
-            <option>Low</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Assigned To</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Assigned To</option>
             <option>Jamie K.</option>
             <option>Alessandro C.</option>
             <option>Thanh B.</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Priority</label>
+          <label for="exampleFormControlSelect1"></label>
           <select class="form-control" id="exampleFormControlSelect1">
-            <option>High</option>
-            <option>Medium</option>
-            <option>Low</option>
+            <option>Status</option>
+            <option>To Do</option>
+            <option>In Progress</option>
+            <option>Review</option>
+            <option>Done</option>
           </select>
         </div>
-      </form>
+      </div>    
+    <div class="container">
+      <p>Due Date</p>
+        <div class="row">
+          <div class="form-group col-xs-6">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+          </div> 
+          <div class="form-group col-xs-6">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Year</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option>2024</option>
+            </select>
+          </div>
+        </div>
     </div>
-
+    
+     
+  
 
 
 
