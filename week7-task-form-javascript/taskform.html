@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>new task form</title>
+</head>
+
+<body>
+      <div class="container">
+          <h1>Create new task</h1>
+          <form action="/action_page.php" class="needs-validation" novalidate>
+              <div class="form-group">
+                  <label for="uname">Task name:</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter text here" name="uname" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-group">
+                  <label for="pwd">Description:</label>
+                  <input class="form-control" id="pwd" placeholder="Enter text here" name="pswd" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <label for="sel1">Assigned to (select one):</label>
+              <select class="form-control" id="sel1" name="sellist1">
+                  <option>Jamie</option>
+                  <option>Thanh</option>
+                  <option>Alex</option>
+              </select>
+              <br>
+              <div class="md-form md-outline input-with-post-icon datepicker">
+                  <label for="example">Due date:</label>
+                  <input placeholder="Select date" type="date" id="example" class="form-control">
+                </div>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">To do</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">In progress</label>
+                </div>  
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Review</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Done</label>
+                </div>  
+              <br>
+              <br>
+              <button type="submit" class="btn btn-secondary">Submit</button>
+          </form>
+    </div>
+  <script src="taskform.js"></script>
+</body>
+
+</html>
