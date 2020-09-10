@@ -29,16 +29,17 @@
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
               </div>
-              <label for="sel1">Assigned to (select one):</label>
-              <select class="form-control" id="sel1" name="sellist1">
-                  <option>Jamie</option>
-                  <option>Thanh</option>
-                  <option>Alex</option>
+              <label for="assigned-to">Assigned to:</label>
+              <select class="form-control" id="assigned" name="assigned-to-1" required>
+                  <option value='' class="dropdown" disabled selected>Please select</option>
+                  <option value='1' class="dropdown">Jamie</option>
+                  <option value='2' class="dropdown">Thanh</option>
+                  <option value='3' class="dropdown">Alex</option>
               </select>
               <br>
-              <div class="md-form md-outline input-with-post-icon datepicker">
+              <div id="datepicker" class="md-form md-outline input-with-post-icon ">
                   <label for="example">Due date:</label>
-                  <input placeholder="Select date" type="date" id="example" class="form-control">
+                  <input placeholder="Select date" type="date" id="dueDate" class="form-control">
                 </div>
                 <br>
                 <div class="form-check form-check-inline">

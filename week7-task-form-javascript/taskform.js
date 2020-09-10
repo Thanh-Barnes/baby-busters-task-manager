@@ -15,19 +15,43 @@
 
 
 
-// AssignedTo -> Not Empty and longer than 8 characters
-// Default "Select"
-// If Jamie/Thanh/Alex selected it will give valid green border
+// AssignedTo 
+// DONE - Default "Select" 
+// DONE - If Jamie/Thanh/Alex selected it will give valid green border 
 // Create invalid alert when submit button pressed when no dropdown option is selected (only triggered when submit button is pressed)
 
+const assignedTo = document.querySelector('#assigned');
+
+assignedTo.addEventListener('click', (event) => {
+    event.preventDefault()
+    
+    if (assignedTo.value) {
+        assignedTo.classList.add('is-valid');
+    } else {
+        // assignedTo.classList.add('is-invalid');
+        //not sure about above, keep for when submit button pressed and not selected
+    }
+})
 
 
 // DueDate  -> Not Empty and not in the past
-// Default "current day"
-// When select date it will give valid green border
-// Challenge - Date is invalid when due date before current date is selected, alert "Due date is not valid"
-// Create invalid alert when submit button pressed when you have not entered a due date (only triggered when submit button is pressed)
+// DONE (not needed) - Default "current day"
+// DONE - When select date it will give valid green border
+// challenge - Date is invalid when due date before current date is selected, alert "Due date is not valid"
+// create invalid alert when submit button pressed when you have not entered a due date (only triggered when submit button is pressed)
 
+const datePicker = document.querySelector('#datepicker');
+
+datePicker.addEventListener('input', (event) => {
+
+    if (dueDate.value) {
+        dueDate.classList.add('is-valid');
+        dueDate.classList.remove('is-invalid');
+    } else {
+        dueDate.classList.remove('is-valid');
+        dueDate.classList.add('is-invalid');
+    }
+})
 
 
 // Status checkbox
