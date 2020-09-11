@@ -38,11 +38,18 @@ formValidate.addEventListener('click', (event) => {
 // DONE - If Jamie/Thanh/Alex selected it will give valid green border 
 // Create invalid alert when submit button pressed when no dropdown option is selected (only triggered when submit button is pressed)
 
+const assignedTo = document.querySelector('#assigned');
 
-// assignedTo.classList.add('is-invalid');
-//not sure about above, keep for when submit button pressed and not selected
-
-
+assignedTo.addEventListener('click', (event) => {
+    event.preventDefault()
+    
+    if (assignedTo.value) {
+        assignedTo.classList.add('is-valid');
+    } else {
+        // assignedTo.classList.add('is-invalid');
+        //not sure about above, keep for when submit button pressed and not selected
+    }
+})
 
 // DueDate  -> Not Empty and not in the past
 // DONE (not needed) - Default "current day"
