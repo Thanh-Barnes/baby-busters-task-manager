@@ -13,6 +13,24 @@
 // Optional - Update bootstrap to wrap text so that all contents are visible, instead of being in one line
 // At end - create invalid alert when submit button pressed and no text provided (> 0)
 
+const formValidate = document.querySelector('#form-overall');
+const formValidateDescription = document.querySelector('#form-validate-description');
+
+formValidate.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (formValidateDescription.value.length === 0) {
+        formValidateDescription.classList.remove('is-invalid');
+        formValidateDescription.classList.remove('is-valid');
+    
+    } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 150) {
+        formValidateDescription.classList.remove('is-invalid');
+        formValidateDescription.classList.add('is-valid');
+
+    } else {
+        formValidateDescription.classList.add('is-invalid');
+        formValidateDescription.classList.remove('is-valid');
+    }
+});
 
 
 // AssignedTo 
@@ -32,7 +50,6 @@ assignedTo.addEventListener('click', (event) => {
         //not sure about above, keep for when submit button pressed and not selected
     }
 })
-
 
 // DueDate  -> Not Empty and not in the past
 // DONE (not needed) - Default "current day"

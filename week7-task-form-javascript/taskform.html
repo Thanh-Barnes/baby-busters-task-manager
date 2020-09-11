@@ -16,18 +16,18 @@
 <body>
       <div class="container">
           <h1>Create new task</h1>
-          <form action="/action_page.php" class="needs-validation" novalidate>
+          <form action="/action_page.php" class="needs-validation" id="form-overall" novalidate>
               <div class="form-group">
                   <label for="uname">Task name:</label>
                   <input type="text" class="form-control" id="uname" placeholder="Enter text here" name="uname" required>
                   <div class="valid-feedback">Valid.</div>
                   <div class="invalid-feedback">Please fill out this field.</div>
               </div>
-              <div class="form-group">
+              <div id="form-validate" novalidation>
                   <label for="pwd">Description:</label>
-                  <input class="form-control" id="pwd" placeholder="Enter text here" name="pswd" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <input type="text" id="form-validate-description" class="form-control">
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Description should be no longer than 150 characters</div>
               </div>
               <label for="assigned-to">Assigned to:</label>
               <select class="form-control" id="assigned" name="assigned-to-1" required>
@@ -37,7 +37,7 @@
                   <option value='3' class="dropdown">Alex</option>
               </select>
               <br>
-              <div id="datepicker" class="md-form md-outline input-with-post-icon ">
+                <div id="datepicker" class="md-form md-outline input-with-post-icon ">
                   <label for="example">Due date:</label>
                   <input placeholder="Select date" type="date" id="dueDate" class="form-control">
                 </div>
