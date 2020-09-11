@@ -1,11 +1,24 @@
 // Create a JavaScript function called “validateTaskForm” that verifies that the inputs inserted by the user in the task form are correct:
-
 // Task name -> Not Empty and not longer than 8 characters - 
 // Validation status (valid green border, invalid red border & alert "Task name too long")
 // Replace grey text in input box with instructions "Add task name less than 8 characters" 
 // At end - create invalid alert when submit button pressed and no text provided (> 0) 
 
+const taskNameValidate = document.querySelector('#form-overall');
+const formValidateTaskName = document.querySelector('#task-name-validate');
 
+taskNameValidate.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    if (formValidateTaskName.value.length < 20) {
+        formValidateTaskName.classList.add('is-valid');
+        formValidateTaskName.classList.remove('is-invalid');
+        
+    } else {
+        formValidateTaskName.classList.add('is-invalid');
+        formValidateTaskName.classList.remove('is-valid');
+    }
+});
 
 // Description -> Not Empty and not longer than 150 characters 
 // Validation status (valid green border, invalid red border & alert "Description is too long" type length max limit 150)

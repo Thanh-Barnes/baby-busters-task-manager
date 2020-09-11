@@ -19,12 +19,15 @@
 <body>
       <div class="container">
           <h1>Create new task</h1>
-          <form action="/action_page.php" class="needs-validation" id="form-overall" novalidate>
-              <div class="form-group">
+
+          <!--no validate?-->
+          <form action="/action_page.php" class="needs-validation" id="form-overall">
+              <div class="form-group" id="task-name" novalidation>
+
                   <label for="uname">Task name:</label>
-                  <input type="text" class="form-control" id="uname" placeholder="Enter text here" name="uname" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
+                  <input type="text" class="form-control" id="task-name-validate" placeholder="Add task name (no longer than 8 characters)" name="uname" required>
+                  <div class="valid-feedback">Looks good!)</div>
+                  <div class="invalid-feedback">Task name has to be less than 20 characters </div>
               </div>
               <div id="form-validate" novalidation>
                   <label for="pwd">Description:</label>
