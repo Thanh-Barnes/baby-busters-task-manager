@@ -10,7 +10,11 @@ const formValidateTaskName = document.querySelector('#task-name-validate');
 taskNameValidate.addEventListener('click', (event) => {
     event.preventDefault()
 
-    if (formValidateTaskName.value.length < 20) {
+    if (formValidateTaskName.value.length === 0) {
+        formValidateTaskName.classList.remove('is-invalid');
+        formValidateTaskName.classList.remove('is-valid'); 
+    
+    } else if (formValidateTaskName.value.length < 20) {
         formValidateTaskName.classList.add('is-valid');
         formValidateTaskName.classList.remove('is-invalid');
         
@@ -31,13 +35,14 @@ const formValidateDescription = document.querySelector('#form-validate-descripti
 
 formValidate.addEventListener('click', (event) => {
     event.preventDefault();
+
     if (formValidateDescription.value.length === 0) {
         formValidateDescription.classList.remove('is-invalid');
         formValidateDescription.classList.remove('is-valid');
     
-    } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 150) {
-        formValidateDescription.classList.remove('is-invalid');
+    } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 10) {
         formValidateDescription.classList.add('is-valid');
+        formValidateDescription.classList.remove('is-invalid');
 
     } else {
         formValidateDescription.classList.add('is-invalid');
@@ -64,20 +69,12 @@ assignedTo.addEventListener('click', (event) => {
     }
 })
 
-<<<<<<< HEAD
 
     // DueDate  -> Not Empty and not in the past
     // DONE (not needed) - Default "current day"
     // DONE - When select date it will give valid green border
     // challenge - Date is invalid when due date before current date is selected, alert "Due date is not valid"
     // create invalid alert when submit button pressed when you have not entered a due date (only triggered when submit button is pressed)
-=======
-// DueDate  -> Not Empty and not in the past
-// DONE (not needed) - Default "current day"
-// DONE - When select date it will give valid green border
-// challenge - Date is invalid when due date before current date is selected, alert "Due date is not valid"
-// create invalid alert when submit button pressed when you have not entered a due date (only triggered when submit button is pressed)
->>>>>>> 0f51ac2b89fb05573a4a8f2c85eaf5df17d6162d
 
 const datePicker = document.querySelector('#datepicker');
 
@@ -92,15 +89,7 @@ datePicker.addEventListener('input', (event) => {
         dueDate.classList.add('is-invalid');
         console.log(dueDate);
     }
-  
-
-
-})
-
-
-
-
-
+  })
 
 
 
