@@ -81,15 +81,24 @@ const datePicker = document.querySelector('#datepicker');
 datePicker.addEventListener('input', (event) => {
     event.preventDefault();
 
-    if (dueDate.value) {  
-        dueDate.classList.add('is-valid');
-        dueDate.classList.remove('is-invalid');
+    if (dueDateInput.value) {  
+        dueDateInput.classList.add('is-valid');
+        dueDateInput.classList.remove('is-invalid');
     } else {
-        dueDate.classList.remove('is-valid');
-        dueDate.classList.add('is-invalid');
+        dueDateInput.classList.remove('is-valid');
+        dueDateInput.classList.add('is-invalid');
         console.log(dueDate);
     }
   })
+
+    // date set not sure where to put
+// const dueDateInput = document.querySelector('#dueDateInput');
+// const today = new Date();
+// today.setUTCHours(0, 0, 0, 0);
+// if (dueDateInput.valueAsNumber < today.getTime()) {
+//   console.log('selected day is in the past')
+// }
+
 
 
 
