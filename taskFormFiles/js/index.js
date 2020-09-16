@@ -1,14 +1,16 @@
 // Create a JavaScript function called “validateTaskForm” that verifies that the inputs inserted by the user in the task form are correct:
-// Task name -> Not Empty and not longer than 8 characters - 
-// Validation status (valid green border, invalid red border & alert "Task name too long")
-// Replace grey text in input box with instructions "Add task name less than 8 characters" 
-// At end - create invalid alert when submit button pressed and no text provided (> 0) 
 
-const taskNameValidate = document.querySelector('#form-overall');
+
+// Task name -> Not Empty and not longer than 8 characters - 
+    // Validation status (valid green border, invalid red border & alert "Task name too long")
+    // Replace grey text in input box with instructions "Add task name less than 8 characters" 
+    // At end - create invalid alert when submit button pressed and no text provided (> 0) 
+
+const taskNameValidate = document.querySelector('#task-name');
 const formValidateTaskName = document.querySelector('#task-name-validate');
 
-taskNameValidate.addEventListener('click', (event) => {
-    event.preventDefault()
+taskNameValidate.addEventListener('mouseout', (event) => {
+    event.preventDefault();
 
     if (formValidateTaskName.value.length === 0) {
         formValidateTaskName.classList.remove('is-invalid');
@@ -25,15 +27,15 @@ taskNameValidate.addEventListener('click', (event) => {
 });
 
 // Description -> Not Empty and not longer than 150 characters 
-// Validation status (valid green border, invalid red border & alert "Description is too long" type length max limit 150)
-// Replace grey text with "Description has to be less than 150 characters"
-// Optional - Update bootstrap to wrap text so that all contents are visible, instead of being in one line
-// At end - create invalid alert when submit button pressed and no text provided (> 0)
+    // Validation status (valid green border, invalid red border & alert "Description is too long" type length max limit 150)
+    // Replace grey text with "Description has to be less than 150 characters"
+    // Optional - Update bootstrap to wrap text so that all contents are visible, instead of being in one line
+    // At end - create invalid alert when submit button pressed and no text provided (> 0)
 
-const formValidate = document.querySelector('#form-overall');
+const formValidate = document.querySelector('#form-validate');
 const formValidateDescription = document.querySelector('#form-validate-description');
 
-formValidate.addEventListener('click', (event) => {
+formValidate.addEventListener('mouseout', (event) => {
     event.preventDefault();
 
     if (formValidateDescription.value.length === 0) {
@@ -51,7 +53,7 @@ formValidate.addEventListener('click', (event) => {
 });
 
 
-    // AssignedTo 
+// AssignedTo 
     // DONE - Default "Select" 
     // DONE - If Jamie/Thanh/Alex selected it will give valid green border 
     // Create invalid alert when submit button pressed when no dropdown option is selected (only triggered when submit button is pressed)
@@ -59,53 +61,44 @@ formValidate.addEventListener('click', (event) => {
 const assignedTo = document.querySelector('#assigned');
 
 assignedTo.addEventListener('click', (event) => {
-    event.preventDefault()
+    event.preventDefault();''
     
     if (assignedTo.value) {
         assignedTo.classList.add('is-valid');
-    } else {
-        // assignedTo.classList.add('is-invalid');
-        //not sure about above, keep for when submit button pressed and not selected
-    }
-})
+    } 
+});
 
 
-    // DueDate  -> Not Empty and not in the past
+// DueDate  -> Not Empty and not in the past
     // DONE (not needed) - Default "current day"
     // DONE - When select date it will give valid green border
     // challenge - Date is invalid when due date before current date is selected, alert "Due date is not valid"
     // create invalid alert when submit button pressed when you have not entered a due date (only triggered when submit button is pressed)
 
 const datePicker = document.querySelector('#datepicker');
+const dueDateInput = document.querySelector('.dateInput');
 
-datePicker.addEventListener('input', (event) => {
-    event.preventDefault();
+datePicker.addEventListener('mouseout', () => {
 
-    if (dueDateInput.value) {  
-        dueDateInput.classList.add('is-valid');
+    if (dueDateInput.value) { 
+        const today = new Date();
+        today.setUTCHours(0 ,0, 0, 0);
+        
+        if (dueDateInput.valueAsNumber < today.getTime()) {
+            console.log('Date must not be in the past');
+            dueDateInput.classList.add('is-invalid');
+        } else {
+            dueDateInput.classList.add('is-valid');
         dueDateInput.classList.remove('is-invalid');
-    } else {
-        dueDateInput.classList.remove('is-valid');
-        dueDateInput.classList.add('is-invalid');
-        console.log(dueDate);
-    }
-  })
-
-    // date set not sure where to put
-// const dueDateInput = document.querySelector('#dueDateInput');
-// const today = new Date();
-// today.setUTCHours(0, 0, 0, 0);
-// if (dueDateInput.valueAsNumber < today.getTime()) {
-//   console.log('selected day is in the past')
-// }
+        }  
+    } 
+});
 
 
 
-
-// Status checkbox
-// Box the checkbox
-// Can only select 1 option at a time 
-
+// Status checkbox - addeventlistener?
+    // Box the checkbox
+    // Can only select 1 option at a time 
 
 
 
@@ -114,3 +107,6 @@ datePicker.addEventListener('input', (event) => {
 // Check everything is valid 
 
 // Verify that your code works as expected
+
+
+
