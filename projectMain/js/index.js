@@ -28,8 +28,7 @@ newTaskFormButton.addEventListener('click', (event) => {
     const assigned = newTaskAssigned.value;
     const dueDate = newTaskDueDate.value;
 
-    // if (isValid) {
-//once all the isValid = true/false is done on validation.js then open this
+    if (isValid) {
         // Add the task to the task manager
         taskManager.addTask(taskName, description,assigned, dueDate);
 
@@ -40,7 +39,7 @@ newTaskFormButton.addEventListener('click', (event) => {
         newTaskDescription.value = '';
         newTaskAssigned.value = '';
         newTaskDueDate.value = '';
-    // }
+    }
 });
 
 

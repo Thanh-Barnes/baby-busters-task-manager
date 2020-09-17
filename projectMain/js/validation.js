@@ -1,6 +1,4 @@
 let isValid = true;
-// TO DO - add isValid to each if/else below
-
 
 // Task name -> Not Empty and not longer than 8 characters - 
 //     Validation status (valid green border, invalid red border & alert "Task name too long")
@@ -24,6 +22,7 @@ taskNameValidate.addEventListener('mouseout', (event) => {
         formValidateTaskName.classList.remove('is-invalid');
         
     } else {
+        isValid = false;
         formValidateTaskName.classList.add('is-invalid');
         formValidateTaskName.classList.remove('is-valid');
     }
@@ -42,14 +41,17 @@ formValidate.addEventListener('mouseout', (event) => {
     event.preventDefault();
 
     if (formValidateDescription.value.length === 0) {
+        isValid = false;
         formValidateDescription.classList.remove('is-invalid');
         formValidateDescription.classList.remove('is-valid');
     
     } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 10) {
+        isValid = true;
         formValidateDescription.classList.add('is-valid');
         formValidateDescription.classList.remove('is-invalid');
 
     } else {
+        isValid = false;
         formValidateDescription.classList.add('is-invalid');
         formValidateDescription.classList.remove('is-valid');
     }
@@ -67,6 +69,7 @@ assignedTo.addEventListener('click', (event) => {
     event.preventDefault();''
     
     if (assignedTo.value) {
+        isValid = true;
         assignedTo.classList.add('is-valid');
     } 
 });
@@ -88,11 +91,13 @@ datePicker.addEventListener('mouseout', () => {
         today.setUTCHours(0 ,0, 0, 0);
         
         if (dueDateInput.valueAsNumber < today.getTime()) {
+            isValid = false;
             console.log('Date must not be in the past');
             dueDateInput.classList.add('is-invalid');
         } else {
+            isValid = true;
             dueDateInput.classList.add('is-valid');
-        dueDateInput.classList.remove('is-invalid');
+            dueDateInput.classList.remove('is-invalid');
         }  
     } 
 });

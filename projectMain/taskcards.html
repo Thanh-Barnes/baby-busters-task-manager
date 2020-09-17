@@ -8,18 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
-    
     
     <title>Task cards</title>
   </head>
   <body>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
         <a class="navbar-brand" href="#">BBTaskManager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse float-right text-right" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
@@ -30,18 +33,17 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Settings</a>
             </li> 
-            <li class="nav-item">
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Add task
-              </button>
-            </li>         
           </ul>
-        </div>  
+           
+        </div>
+        <!-- Button trigger modal -->
+          <button type="button" class="btn btn-dark text-light" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add task
+          </button>  
       </nav>
       <br>    
 
-    <!-- Modal -->
+    <!-- Add task modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -70,9 +72,9 @@
                     <label for="assigned-to">Assigned to:</label>
                     <select class="form-control form-assigned-input" id="assigned" name="assigned-to-1" required>
                         <option value='' class="dropdown" disabled selected>Please select</option>
-                        <option value='1' class="dropdown">Jamie</option>
-                        <option value='2' class="dropdown">Thanh</option>
-                        <option value='3' class="dropdown">Alex</option>
+                        <option value='Jamie' class="dropdown">Jamie</option>
+                        <option value='Thanh' class="dropdown">Thanh</option>
+                        <option value='Alex' class="dropdown">Alex</option>
                     </select>
                   </div>
                   <br>
@@ -85,64 +87,37 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button id="form-button" type="button" class="btn btn-primary">Submit</button>
+            <button id="form-button" type="button" data-dismiss="modal" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- cards -->
-    <div class="container pt-3 my-3 border bg-light text-dark">  
-    <div  class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-4 ">
-          <div id="task-list" class="card h-100">
+    <div class="container pt-3 my-3 border bg-i text-dark">  
+      <div  class="row row-cols-md-3">
+        <div class="col mb-4">
+          <!-- <div id="task-list" class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Task1Name</h5>
+              <h5 class="card-title">Task Name</h5>
               <p class="card-text">Description of task</p>
               <ul class="list-group">
                 <li class="list-group-item">Assigned to:</li>
                 <li class="list-group-item">Due date:</li>
                 <br>
                 <div class="alert alert-success">
-                    <a><strong>Status:</strong> To do</a>
+                    <a><strong>Status:</strong>&nbsp;To do</a>
                 </div>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="col mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Task2Name</h5>
-                <p class="card-text">Description of task</p>
-                <ul class="list-group">
-                  <li class="list-group-item">Assigned to:</li>
-                  <li class="list-group-item">Due date:</li>
-                  <br>
-                  <div class="alert alert-warning">
-                      <a><strong>Status:</strong> In progress</a>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Task3Name</h5>
-                <p class="card-text">Description of task</p>
-                <ul class="list-group">
-                  <li class="list-group-item">Assigned to:</li>
-                  <li class="list-group-item">Due date:</li>
-                  <br>
-                  <div class="alert alert-danger">
-                      <a><strong>Status:</strong> In review</a>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </div>          
+      </div>         
     </div>
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -155,4 +130,7 @@
     <!-- <script src="js/taskManager.js"></script>   -->
     <script src="js/index.js"></script>
   </body>
+  <footer>
+    <p>Created by BabyBusters 2020</p>
+  </footer>
 </html>
