@@ -8,3 +8,4 @@ When have time:
 - update html id or class and make sure all reference is updated
 - submit box in future to put in form
 - move modal 'add task' button to right side
+- remove the tick from validation
