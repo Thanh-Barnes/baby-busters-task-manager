@@ -1,0 +1,11 @@
+c/* .datepicker.dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    width: auto;
+   } */
+
+div > div > div > div > form > div > .form-control.is-valid, div > div > div > .form-control.is-invalid {
+    background-image: none;
+    padding-right: inherit;
+
+}
