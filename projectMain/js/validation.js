@@ -1,9 +1,11 @@
+let isValid = true;
+// TO DO - add isValid to each if/else below
 
 
 // Task name -> Not Empty and not longer than 8 characters - 
-    // Validation status (valid green border, invalid red border & alert "Task name too long")
-    // Replace grey text in input box with instructions "Add task name less than 8 characters" 
-    // At end - create invalid alert when submit button pressed and no text provided (> 0) 
+//     Validation status (valid green border, invalid red border & alert "Task name too long")
+//     Replace grey text in input box with instructions "Add task name less than 8 characters" 
+//     At end - create invalid alert when submit button pressed and no text provided (> 0) 
 
 const taskNameValidate = document.querySelector('#task-name');
 const formValidateTaskName = document.querySelector('#task-name-validate');
@@ -12,10 +14,12 @@ taskNameValidate.addEventListener('mouseout', (event) => {
     event.preventDefault();
 
     if (formValidateTaskName.value.length === 0) {
+        isValid = false;
         formValidateTaskName.classList.remove('is-invalid');
         formValidateTaskName.classList.remove('is-valid'); 
     
     } else if (formValidateTaskName.value.length < 20) {
+        isValid = true;
         formValidateTaskName.classList.add('is-valid');
         formValidateTaskName.classList.remove('is-invalid');
         
@@ -92,7 +96,6 @@ datePicker.addEventListener('mouseout', () => {
         }  
     } 
 });
-
 
 
 // Status checkbox - addeventlistener?
