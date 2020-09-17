@@ -8,8 +8,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="/home/andrew/jwd/async-sessions/taskManagerApp/babybusters-task-manager/taskFormFiles/style.css">
-
     <link rel="stylesheet" href="style.css">
     
     
@@ -54,23 +52,23 @@
             </button>
           </div>
           <div class="modal-body">
-              <form action="/action_page.php" class="needs-validation">
+              <form id="new-task-form" action="/action_page.php" class="needs-validation">
                   <div class="form-group" id="task-name" novalidation>
                       <label for="uname">Task name:</label>
-                      <input type="text" class="form-control" id="task-name-validate" placeholder="Add task name (no longer than 8 characters)" name="uname" required>
+                      <input type="text" class="form-control form-task-name-input" id="task-name-validate" placeholder="Add task name (no longer than 8 characters)" name="uname" required>
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">Task name has to be less than 20 characters </div>
                   </div>
                   <div id="form-validate" novalidation>
                       <label for="pwd">Description:</label>
-                      <input type="text" id="form-validate-description" class="form-control" placeholder="Add description (no longer than 150 characters)">
+                      <input type="text" id="form-validate-description" class="form-control form-description-input" placeholder="Add description (no longer than 150 characters)">
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">Description should be no longer than 150 characters</div>
                   </div>
                   <br>
                   <div>
                     <label for="assigned-to">Assigned to:</label>
-                    <select class="form-control" id="assigned" name="assigned-to-1" required>
+                    <select class="form-control form-assigned-input" id="assigned" name="assigned-to-1" required>
                         <option value='' class="dropdown" disabled selected>Please select</option>
                         <option value='1' class="dropdown">Jamie</option>
                         <option value='2' class="dropdown">Thanh</option>
@@ -80,7 +78,7 @@
                   <br>
                   <div id="datepicker" class="md-form md-outline input-with-post-icon">
                     <label for="dueDateInput">Due date:</label>
-                    <input placeholder="Select date" type="date" id="dueDateInput" class="form-control dateInput">
+                    <input placeholder="Select date" type="date" id="dueDateInput" class="form-control dateInput form-dueDate-input">
                     <div class="invalid-feedback">Date must not be in the past</div>
                   </div>
               </form>
@@ -208,6 +206,7 @@
     <!-- once combined taskManager js remove individual -->
     <script src="js/taskManager-Thanh.js"></script>  
     <script src="js/taskManager.js"></script>  
+    <script src="js/validation.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

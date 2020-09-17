@@ -21,19 +21,3 @@ class TaskManager {
     }    
 };
 
-// Initialize (create a new object) a new instance of TaskManager to test
-// We've initialised a TaskManager instance and stored it in a taskManager variable
-const taskManager = new TaskManager();
-
-
-
-
-
-
-
-// //test code
-    // taskManager.addTask('Dinner', 'Make food', 'Thanh B.', '16/9/2020');
-    // taskManager.addTask('Meal', 'food', 'Thanh B.', '16/9/2020');
-
-    // console.log(taskManager);
-
