@@ -1,7 +1,7 @@
 To do: 
 - validation true/false statements to add
 - currently when add new task, it add task in same box. when add task make sure it creates new card or card list
-- when add new task make sure form clears for when adding new task
+- when add new task make sure form clears form when adding another new task
 
 
 When have time:
