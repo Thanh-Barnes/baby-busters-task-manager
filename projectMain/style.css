@@ -10,3 +10,9 @@ footer {
     left: 0px;
     right: 0px;
 }
+
+.btn-mark-as-done{
+    /* background-color: green;
+    color: white; */
+    float: right;
+}

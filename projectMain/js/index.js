@@ -39,10 +39,32 @@ newTaskFormButton.addEventListener('click', (event) => {
         newTaskDescription.value = '';
         newTaskAssigned.value = '';
         newTaskDueDate.value = '';
-    }
+    };
 });
 
+const tasksList = document.querySelector('#task-list');
 
-    
+tasksList.addEventListener('click', (event) => {
+
+
+    if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+
+        const taskId = Number(parentTask.dataset.taskId);
+
+        const task = taskManager.getTaskById(taskId);
+
+        task.status = 'DONE';
+
+        console.log(task);
+
+        taskManager.render();
+
+        //test step 2
+        console.log(parentTask);
+    }
+
+
+});
     
     

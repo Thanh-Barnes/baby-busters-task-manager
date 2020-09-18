@@ -1,24 +1,22 @@
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
     
     const html = 
         `
-        <div id="task-list" class="card h-100">
+        <div id="task-list" class="card h-100" data-task-id=${id}>
             <div class="card-body">
               <h5 class="card-title">${name}</h5>
               <p class="card-text">${description}</p>
-              <ul class="list-group">
-                <li class="list-group-item">${assignedTo}</li>
-                <li class="list-group-item">${dueDate}</li>
-                <br>
-                <div class="alert alert-success">
-                    <a><strong>Status:</strong>&nbsp;${status}</a>
-                </div>
-              </ul>
+              <p class="card-text"><strong>Assigned To:</strong>&nbsp${assignedTo}</p>
+              <p class="card-text"><strong>Due Date:</strong>&nbsp${dueDate}</p>
+              <div class="status-box alert ${status === 'TODO' ? 'alert-warning' : 'alert-success'}">
+                <a><strong>Status:</strong>&nbsp;${status}</a>
+              </div>
+              <button type="button" class="btn-mark-as-done done-button btn btn-outline-success btn-sm ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done
+              </button>
             </div>
         </div>
         `
         return html;
-        
     };
 
                 
@@ -45,6 +43,25 @@ class TaskManager {
     this.tasks.push(task);
     }    
 
+    // getTaskById() method
+    // , it should accept a taskId as a parameter
+    getTaskById(taskId) {
+
+        let foundTask;
+
+        for (let i = 0; i < this.tasks.length; i++) {
+
+            const task = this.tasks[i];
+            
+            if (task.id === taskId) {
+
+                foundTask = task;
+            };
+        };
+        return foundTask;
+    };
+
+
     //render method
     render () {
         // create array to store tasks
@@ -63,7 +80,7 @@ class TaskManager {
             const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
             
             // Create the task html
-            const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+            const taskHtml = createTaskHtml(task.id, task.name, task.description, task.assignedTo, formattedDate, task.status);
 
             // Push it to the tasksHtmlList array
             tasksHtmlList.push(taskHtml);
@@ -75,21 +92,13 @@ class TaskManager {
         
         // Set the inner html of the tasksList on the page
         const tasksList = document.querySelector('#task-list');
-        tasksList.innerHTML = tasksHtml;
-        
-        
+        tasksList.innerHTML = tasksHtml;        
     };
 };
 
 
 
 
-
-//test code - do no delete until end
-// const taskManager1 = new TaskManager(0);
-// taskManager1.addTask('Name is', 'Description all', 'TB', '20/8/2021');
-// taskManager1.addTask('Meeting at noon', 'Meeting to go through answers', 'JC', '15/12/2021');
-// console.log(taskManager1.tasks);
 
 
 
