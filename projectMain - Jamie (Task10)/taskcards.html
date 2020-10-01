@@ -8,8 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
-    <!-- FontAwesome Icons --> 
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
     
@@ -57,13 +57,13 @@
               <form id="new-task-form" action="/action_page.php" class="needs-validation">
                   <div class="form-group" id="task-name" novalidation>
                       <label for="uname">Task name:</label>
-                      <input type="text" class="form-control form-task-name-input" id="task-name-validate" placeholder="Add task name (no longer than 20 characters)" name="uname" required>
+                      <input type="text" class="form-control form-task-name-input" id="task-name-validate" placeholder="Add task name (no longer than 8 characters)" name="uname" required>
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">Task name has to be less than 20 characters </div>
                   </div>
                   <div id="form-validate" novalidation>
                       <label for="pwd">Description:</label>
-                      <textarea type="text" id="form-validate-description" class="form-control form-description-input" placeholder="Add description (no longer than 150 characters)"></textarea>
+                      <input type="text" id="form-validate-description" class="form-control form-description-input" placeholder="Add description (no longer than 150 characters)">
                       <div class="valid-feedback">Looks good!</div>
                       <div class="invalid-feedback">Description should be no longer than 150 characters</div>
                   </div>
@@ -86,7 +86,7 @@
               </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <button id="form-button" type="button" data-dismiss="modal" class="btn btn-primary">Submit</button>
           </div>
         </div>
@@ -94,20 +94,13 @@
     </div>
 
     <!-- cards -->
-<<<<<<< HEAD
-    <div class="container pt-3 my-3 border bg-light bg-i text-dark">  
-      <!-- <div  class="row row-cols-md-3"> -->
-        <!-- <div class="col mb-4"> -->
-          <h1 class="text-dark">To Do Lists</h1>
-=======
     <div class="container pt-3 my-3 border bg-i text-dark">  
       <div  class="row row-cols-md-3">
         <div class="col mb-4">
->>>>>>> ef7314239587aae8b96ae19fa8dd4c0bdec84f83
           <div id="task-list">
           </div>
-        <!-- </div> -->
-      <!-- </div>          -->
+        </div>
+      </div>         
     </div>
 
 
@@ -119,7 +112,7 @@
     
     <!-- once combined taskManager js remove individual -->
     <script src="js/validation.js"></script>
-    <script src="js/taskManager-Thanh.js"></script>  
+    <script src="js/taskManager-Jamie.js"></script>  
     <!-- <script src="js/taskManager.js"></script>   -->
     <script src="js/index.js"></script>
   </body>
