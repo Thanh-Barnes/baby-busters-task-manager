@@ -11,10 +11,12 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
               <div class="status-box alert ${status === 'TODO' ? 'alert-warning' : 'alert-success'}">
                 <a><strong>Status:</strong>&nbsp;${status}</a>
               </div>
-              <button type="button" class="btn-mark-as-done done-button btn btn-outline-success btn-sm ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done
-              </button>
+              <button type="button" class="btn-mark-as-done done-button btn btn-outline-secondary btn-sm">Edit</button>
+              <button type="button" class="btn-mark-as-done done-button btn btn-outline-success btn-sm ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+              <button type="button" class="delete-button btn btn-outline-danger btn-sm">Delete</button>
             </div>
         </div>
+        <br>
         `
         return html;
     };
@@ -25,7 +27,7 @@ class TaskManager {
     constructor (currentId = 0) {
         this.tasks = [];
         this.currentId = currentId;
-    }
+    };
     
     // Create a method on the class addTask and set status to TODO and id unique
     addTask (name, description, assignedTo, dueDate) {
@@ -39,12 +41,31 @@ class TaskManager {
         };
  
 
-    // push new task to this.task
-    this.tasks.push(task);
-    }    
+        // push new task to this.task
+        this.tasks.push(task);
+    };    
+
+
+    //delete method
+    deleteTask(taskId) {
+        const newTasks = [];
+        
+        for (let i = 0; i < this.tasks.length; i++) {
+            
+            const task = this.tasks[i];
+            
+            if (task.id !== taskId) {
+
+                newTasks.push(task);
+            };
+        };
+        this.tasks = newTasks;
+        console.log(this.tasks);
+    };
+
 
     // getTaskById() method
-    // , it should accept a taskId as a parameter
+    // it should accept a taskId as a parameter
     getTaskById(taskId) {
 
         let foundTask;
@@ -84,7 +105,7 @@ class TaskManager {
 
             // Push it to the tasksHtmlList array
             tasksHtmlList.push(taskHtml);
-        }
+        };
 
         // Create the tasksHtml by joining each item in the tasksHtmlList
         // with a new line in between each item.
@@ -94,6 +115,37 @@ class TaskManager {
         const tasksList = document.querySelector('#task-list');
         tasksList.innerHTML = tasksHtml;        
     };
+
+
+    // save method
+    save() {
+        const tasksJson = JSON.stringify(this.tasks);
+               
+        localStorage.setItem('tasks', tasksJson);
+
+        const currentId = JSON.stringify(this.currentId);
+
+        localStorage.setItem('currentId', currentId);
+
+    };
+
+
+    //load method
+    load() {
+        if (localStorage.getItem('tasks')) {
+            const taskJsonStr = localStorage.getItem('tasks');          
+                
+            this.tasks = JSON.parse(taskJsonStr);
+        }; 
+        
+        if (localStorage.getItem('currentId')) {
+            const currentIdStr = localStorage.getItem('currentId');
+    
+            this.currentId = String(currentIdStr);
+            //can use JSON.parse
+        };      
+    };
+
 };
 
 

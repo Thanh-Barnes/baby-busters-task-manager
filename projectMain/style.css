@@ -12,7 +12,16 @@ footer {
 }
 
 .btn-mark-as-done{
-    /* background-color: green;
-    color: white; */
     float: right;
+}
+
+/* to fix box size */
+textarea {
+    resize: none;
+    height: 1000px;
+}
+
+h1 {
+    text-align: center;
+
 }

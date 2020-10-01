@@ -8,7 +8,7 @@ let isValid = true;
 const taskNameValidate = document.querySelector('#task-name');
 const formValidateTaskName = document.querySelector('#task-name-validate');
 
-taskNameValidate.addEventListener('mouseout', (event) => {
+taskNameValidate.addEventListener('blur', (event) => {
     event.preventDefault();
 
     if (formValidateTaskName.value.length === 0) {
@@ -25,7 +25,7 @@ taskNameValidate.addEventListener('mouseout', (event) => {
         isValid = false;
         formValidateTaskName.classList.add('is-invalid');
         formValidateTaskName.classList.remove('is-valid');
-    }
+    };
 });
 
 // Description -> Not Empty and not longer than 150 characters 
@@ -37,7 +37,7 @@ taskNameValidate.addEventListener('mouseout', (event) => {
 const formValidate = document.querySelector('#form-validate');
 const formValidateDescription = document.querySelector('#form-validate-description');
 
-formValidate.addEventListener('mouseout', (event) => {
+formValidate.addEventListener('blur', (event) => {
     event.preventDefault();
 
     if (formValidateDescription.value.length === 0) {
@@ -45,7 +45,7 @@ formValidate.addEventListener('mouseout', (event) => {
         formValidateDescription.classList.remove('is-invalid');
         formValidateDescription.classList.remove('is-valid');
     
-    } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 10) {
+    } else if (formValidateDescription.value.length > 0 && formValidateDescription.value.length < 300) {
         isValid = true;
         formValidateDescription.classList.add('is-valid');
         formValidateDescription.classList.remove('is-invalid');
@@ -54,7 +54,7 @@ formValidate.addEventListener('mouseout', (event) => {
         isValid = false;
         formValidateDescription.classList.add('is-invalid');
         formValidateDescription.classList.remove('is-valid');
-    }
+    };
 });
 
 
@@ -71,7 +71,13 @@ assignedTo.addEventListener('click', (event) => {
     if (assignedTo.value) {
         isValid = true;
         assignedTo.classList.add('is-valid');
-    } 
+        assignedTo.classList.remove('is-invalid')
+    } else {
+        isValid = false;
+        assignedTo.classList.remove('is-valid');
+        assignedTo.classList.add('is-invalid');
+
+    };
 });
 
 
@@ -98,8 +104,8 @@ datePicker.addEventListener('mouseout', () => {
             isValid = true;
             dueDateInput.classList.add('is-valid');
             dueDateInput.classList.remove('is-invalid');
-        }  
-    } 
+        };  
+    }; 
 });
 
 
@@ -109,11 +115,6 @@ datePicker.addEventListener('mouseout', () => {
 
 
 
-// Submit button
-// event.preventDefault in event listener
-// Check everything is valid 
-
-// Verify that your code works as expected
 
 
 

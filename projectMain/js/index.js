@@ -1,12 +1,12 @@
-
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
 
+taskManager.load();    
+taskManager.render();
 
 // Select the New Task Form to use when move button into the form
 // const newTaskForm = document.querySelector('#new-task-form');
 const newTaskFormButton = document.querySelector('#form-button');
-
 
 
 // Add an 'onsubmit' event listener
@@ -34,20 +34,25 @@ newTaskFormButton.addEventListener('click', (event) => {
 
         taskManager.render();
 
+        taskManager.save();
+
+
         // Clear the form
         newTaskName.value = '';
         newTaskDescription.value = '';
         newTaskAssigned.value = '';
         newTaskDueDate.value = '';
+
     };
 });
 
 const tasksList = document.querySelector('#task-list');
 
+// Mark as done button and delete task button
 tasksList.addEventListener('click', (event) => {
 
-
     if (event.target.classList.contains('done-button')) {
+
         const parentTask = event.target.parentElement.parentElement;
 
         const taskId = Number(parentTask.dataset.taskId);
@@ -56,15 +61,22 @@ tasksList.addEventListener('click', (event) => {
 
         task.status = 'DONE';
 
-        console.log(task);
-
         taskManager.render();
 
-        //test step 2
-        console.log(parentTask);
-    }
+        taskManager.save();
+    };
 
+    if (event.target.classList.contains('delete-button')) {
 
+        const parentTask = event.target.parentElement.parentElement;
+        
+        const taskId = Number(parentTask.dataset.taskId);
+
+        taskManager.deleteTask(taskId);
+
+        taskManager.save();
+        
+        taskManager.render();
+    };
 });
-    
     
