@@ -1,0 +1,18 @@
+.form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {
+    background-image: none;
+    padding-right: inherit;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.btn-mark-as-done{
+    /* background-color: green;
+    color: white; */
+    float: right;
+}
