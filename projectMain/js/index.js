@@ -8,7 +8,6 @@ taskManager.render();
 // const newTaskForm = document.querySelector('#new-task-form');
 const newTaskFormButton = document.querySelector('#form-button');
 
-
 // Add an 'onsubmit' event listener
 newTaskFormButton.addEventListener('click', (event) => {
     
@@ -35,7 +34,6 @@ newTaskFormButton.addEventListener('click', (event) => {
         taskManager.render();
 
         taskManager.save();
-
 
         // Clear the form
         newTaskName.value = '';
@@ -80,3 +78,4 @@ tasksList.addEventListener('click', (event) => {
     };
 });
     
+ 

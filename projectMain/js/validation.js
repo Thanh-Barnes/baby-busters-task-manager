@@ -57,7 +57,6 @@ formValidate.addEventListener('blur', (event) => {
     };
 });
 
-
 // AssignedTo 
     // DONE - Default "Select" 
     // DONE - If Jamie/Thanh/Alex selected it will give valid green border 
@@ -79,7 +78,6 @@ assignedTo.addEventListener('click', (event) => {
 
     };
 });
-
 
 // DueDate  -> Not Empty and not in the past
     // DONE (not needed) - Default "current day"
@@ -107,11 +105,6 @@ datePicker.addEventListener('mouseout', () => {
         };  
     }; 
 });
-
-
-// Status checkbox - addeventlistener?
-    // Box the checkbox
-    // Can only select 1 option at a time 
 
 
 
