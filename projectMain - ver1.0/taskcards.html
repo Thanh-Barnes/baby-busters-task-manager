@@ -92,17 +92,24 @@
 
 
 
-  
-    <div class="container pt-3 my-3 border bg-light bg-i text-dark">  
+    <div class="container pt-3 my-3 border bg-light bg-i text-dark" id="taskcontiner">  
       <!-- <div  class="row row-cols-md-3"> -->
         <!-- <div class="col mb-4"> -->
-          <h1 class="text-dark">To Do Lists</h1>
+          <h1 class="text-dark">TO DO LIST</h1>
           <div id="task-list">
           </div>
         <!-- </div> -->
       <!-- </div>          -->
     </div>
 
+    <div class="music-container py-4">
+      <audio id="audio">
+        <source src="PurplePlanet.mp3" type="audio/mpeg">
+      </audio>
+
+      <button class="btn-sm"id="playPauseBTN" onclick="playPause()">Play/Pause</button>
+      <button class="btn-sm"onclick="stop()">Stop</button>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -118,18 +125,17 @@
   </body>
   <footer>
     
-    <div class="website-footer ">
-        <div class="social media">
-            <span><a href="mailto:jkim0116@gmail.com"><img border="0" alt="mail-icon" 
-                        src="logo/mail-logo.png"
-                        width="50" height="50"></a></span>
-            <span><a href="https://github.com/jamiekimie"><img border="0" alt="gh-icon" 
-                        src="logo/github-mark.png"
-                        width="50" height="50"></a></span>
-            <span><a href="https://www.instagram.com/jamiekimie/"><img border="0" alt="ig-icon"
-                        src="logo/ig-logo.png" width="50" height="50"></a></span>
-            <span><a href="https://www.facebook.com/jamie.kim.796"><img border="0" alt="fb-icon"
-                        src="logo/fb-logo.png" width="50" height="50"></a></span>
+    <div class="website-footer">
+        <div class="social-media">
+            <span><a href="mailto:babybusters03@gmail.com"target="_blank"
+              ><img border="0" alt="mail-icon" 
+                        src="logo/mail-logo.png" width="50" height="50"></a></span>
+            <span><a href="https://australia.generation.org/programs/become-a-web-developer/"target="_blank"
+              ><img border="0" alt="fb-icon"
+                        src="logo/generation-logo.png" width="50" height="50"></a></span>
+            <span><a href="https://github.com/Thanh-Barnes/babybusters-task-manager.git"target="_blank"
+              ><img border="0" alt="gh-icon" 
+              src="logo/github-mark.png" width="50" height="50"></a></span>
         </div>
         <div class="reference">
             <h6 id="footer-text1">Created by BabyBusters 2020</h6>
