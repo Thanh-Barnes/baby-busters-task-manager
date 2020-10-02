@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+.form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {
+    background-image: none;
+    padding-right: inherit;
+}
+
+/* footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+} */
+
+/* to fix box size */
+textarea {
+    resize: none;
+    height: 1000px;
+}
+
+/* .taskcontainer {
+    height: 3000px;
+    display: flex;
+    border: 1px, solid, black;
+    padding-top: 2em;
+
+} */
+
+h1 {
+    text-align: center;
+
+}
+
+.music-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.website-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0em 0em 0em;
+    margin-top: 3em;
+    margin-bottom: 0em;
+    }
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+    
+.reference {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 1em;
+}
+
+
+
+#footer-text1 {
+    /* display: flex; */
+    padding: 20em, 0em;
+    flex-direction: row;
+    font-size: 1em;
+    justify-content: center;
+    
+}
+
+#footer-text2 {
+    /* display: flex; */
+    padding: 20em, 0em;
+    flex-direction: row;
+    font-size: 0.8em;
+    margin-bottom: 2em;
+    justify-content: center;
+}
