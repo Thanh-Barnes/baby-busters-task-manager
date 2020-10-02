@@ -92,7 +92,7 @@
 
 
 
-    <div class="container pt-3 my-3 border bg-light bg-i text-dark" id="taskcontiner">  
+    <div class="container pt-3 my-3 border bg-light bg-i text-dark" style="height:80rem" id="taskcontiner">  
       <!-- <div  class="row row-cols-md-3"> -->
         <!-- <div class="col mb-4"> -->
           <h1 class="text-dark">TO DO LIST</h1>
@@ -101,14 +101,16 @@
         <!-- </div> -->
       <!-- </div>          -->
     </div>
-
-    <div class="music-container py-4">
+    <div>
+      <h6 class="music-player-title">music player</h6>
+    </div>
+    <div class="music-container">
       <audio id="audio">
-        <source src="PurplePlanet.mp3" type="audio/mpeg">
+        <source src="music/PurplePlanet.mp3" type="audio/mpeg">
       </audio>
 
-      <button class="btn-sm"id="playPauseBTN" onclick="playPause()">Play/Pause</button>
-      <button class="btn-sm"onclick="stop()">Stop</button>
+      <button class="btn btn-outline-dark mr-2 music-button-style"  id="playPauseBTN" onclick="playPause()">Play</button>
+      <button class="btn btn-outline-dark music-button-style"onclick="stop()">Stop</button>
     </div>
 
     <!-- Optional JavaScript -->
@@ -128,13 +130,13 @@
     <div class="website-footer">
         <div class="social-media">
             <span><a href="mailto:babybusters03@gmail.com"target="_blank"
-              ><img border="0" alt="mail-icon" 
+              ><img alt="mail-icon" 
                         src="logo/mail-logo.png" width="50" height="50"></a></span>
             <span><a href="https://australia.generation.org/programs/become-a-web-developer/"target="_blank"
-              ><img border="0" alt="fb-icon"
+              ><img alt="fb-icon"
                         src="logo/generation-logo.png" width="50" height="50"></a></span>
             <span><a href="https://github.com/Thanh-Barnes/babybusters-task-manager.git"target="_blank"
-              ><img border="0" alt="gh-icon" 
+              ><img alt="gh-icon" 
               src="logo/github-mark.png" width="50" height="50"></a></span>
         </div>
         <div class="reference">

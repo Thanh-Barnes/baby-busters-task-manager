@@ -32,10 +32,24 @@ h1 {
 
 }
 
+
+.music-player-title {
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
+    
+}
+
 .music-container {
     display: flex;
     justify-content: center;
     text-align: center;
+    padding-top: 0.5em;
+    
+}
+
+.music-button-style {
+    width:5rem;
 }
 
 .website-footer {
