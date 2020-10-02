@@ -3,17 +3,13 @@
     padding-right: inherit;
 }
 
-footer {
+/* footer {
     text-align: center;
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
-}
-
-.btn-mark-as-done{
-    float: right;
-}
+} */
 
 /* to fix box size */
 textarea {
@@ -24,4 +20,23 @@ textarea {
 h1 {
     text-align: center;
 
+}
+
+.reference {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#footer-text1 {
+    padding: 20em, 0em;
+    font-size: 1em;
+}
+
+#footer-text2 {
+    padding: 20em, 0em;
+    font-size: 0.8em;
+    margin-bottom: 2em;
 }
