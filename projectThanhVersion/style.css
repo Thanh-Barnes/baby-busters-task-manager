@@ -12,8 +12,8 @@
     padding-right: inherit;
 }
 
-.users-dropdown {
-    position: relative;
+#assignedToList {
+    padding-left: 0;
 }
 
 /* to fix box size */
