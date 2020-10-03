@@ -3,6 +3,8 @@
 .goTitle {
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
+    display: flex!important;
+    justify-content: space-around;
 }
 
 .form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {

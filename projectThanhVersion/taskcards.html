@@ -18,34 +18,43 @@
     <title>GO Planner</title>
   </head>
   <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-md bg-info navbar-dark">
-        <a class="goTitle navbar-brand" href="#">Get Organised ...</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse float-right text-right" id="collapsibleNavbar">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link text-light" href="#aboutUs">About us</a>
-                  </li>
-                  <li class="nav-item">
-                      <select class="form-control form-assigned-input bg-info text-light border-0" id="assignedToList" name="assignedList" required>
-                          <option value='All' class="dropdown" >All tasks</option>
-                          <option value='Alessandro' class="dropdown">Alessandro C.</option>
-                          <option value='Jamie' class="dropdown">Jamie K.</option>
-                          <option value='Thanh' class="dropdown">Thanh B.</option>
-                      </select>
-                  </li>
-              </ul>
-        </div>
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-md bg-info navbar-dark">
+          <div class="col-sm-4">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link text-light" href="#aboutUs">About us</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link text-light" href="#audio">Music Player</a>
+                      </li>
+                      <li class="nav-item">
+                          <select class="form-control form-assigned-input bg-info text-light border-0" id="assignedToList" name="assignedList" required>
+                              <option value='All' class="dropdown" >All tasks</option>
+                              <option value='Alessandro' class="dropdown">Alessandro C.</option>
+                              <option value='Jamie' class="dropdown">Jamie K.</option>
+                              <option value='Thanh' class="dropdown">Thanh B.</option>
+                          </select>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-sm-4">
+              <a class="goTitle navbar-brand" href="#">&nbsp &nbsp  Get Organised ...</a>
+          </div> 
 
-        <!-- Button trigger modal -->
-          <button type="button" class="btn btn-dark text-light" data-toggle="modal" data-target="#exampleModalCenter">
-            <i class="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Add task
-          </button>  
+          <!-- Button trigger modal -->
+          <div class="col-sm-4">
+              <button type="button" class="btn btn-dark text-light float-right" data-toggle="modal" data-target="#exampleModalCenter">
+                  <i class="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Task
+              </button>  
+          </div>
       </nav>
-      <br>    
+        
 
     <!-- Add task modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -105,7 +114,7 @@
     <div class="container pt-3 my-3 border bg-light bg-i text-dark" id="taskcontiner">  
       <!-- <div  class="row row-cols-md-3"> -->
         <!-- <div class="col mb-4"> -->
-          <h1 class="text-dark">TO DO LIST</h1>
+          <h1 class="toDoList text-dark">TO DO LIST</h1>
           <div id="task-list">
           </div>
         <!-- </div> -->
@@ -117,11 +126,12 @@
     <!-- About us section -->
     <div id="aboutUs" class="container">
         <h2>About us</h2>
+        <p>testing blah blah blah Thanh is great</p>
     </div>
 
     <!-- Music Player -->
     <div>
-        <h6 class="music-player-title">music player</h6>
+        <h6 id="audio" class="music-player-title">music player</h6>
     </div>
     <div class="music-container">
         <audio id="audio">
