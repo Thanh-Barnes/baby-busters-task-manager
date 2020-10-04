@@ -4,11 +4,11 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
         `
         <div id="task-list" class="card h-100 p-3 my-3" data-task-id=${id}>
             <div class="row pl-2 pb-2">
-                <div class="col-sm-9 text-left">
+                <div class="col-md-9 col-sm-8 text-left">
                     <h5 class="card-title">${name}</h5>
                     <p class="card-text">${description}</p>
                 </div>
-                <div class="col-sm-3 text-right">
+                <div class="col-md-3 col-sm-4 text-right">
                     <h5 class="card-title">${assignedTo}</h5>
                     <p class="card-text">${dueDate}</p>
                 </div>
@@ -25,7 +25,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             <div class="row">
                 <div class="col text-left">
                     <button type="button" class="delete-button btn btn-outline-danger btn-sm px-3">Delete</button>
-                    <button type="button" class="btn-mark-edit btn btn-outline-secondary btn-sm px-3">Edit</button> &nbsp
+                    <button type="button" class="btn-mark-edit btn btn-outline-secondary btn-sm px-3" data-toggle="modal" data-target="#exampleModalCenter">Edit</button> &nbsp
                 </div>
                 <div class="col text-right pl-10">
                     <button type="button" class="btn-mark-as-done done-button btn btn-outline-success btn-sm px-3 ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
@@ -53,7 +53,7 @@ class TaskManager {
             dueDate: dueDate,
             status: "TODO",
         };
-
+        console.log(task)
         // push new task to this.task
         this.tasks.push(task);
     };
@@ -73,7 +73,6 @@ class TaskManager {
             };
         };
         this.tasks = newTasks;
-        // console.log(this.tasks);
     };
 
 
@@ -97,9 +96,6 @@ class TaskManager {
     // getTaskByAssignedTo() method
     getTasksByAssignedTo(assignedTo) {
 
-        console.log(assignedTo)
-        console.log('test 2')
-
         let assignedToTasks = [];
 
         for (let i = 0; i < this.tasks.length; i++) {
@@ -111,13 +107,11 @@ class TaskManager {
                 assignedToTasks.push(task);
             };
         };
-        console.log(assignedToTasks)
-        
         return assignedToTasks;
     };
-   
 
-    //render method
+    
+    // render method
     render(tasksArray) {
         // create array to store tasks
         const tasksHtmlList = [];
@@ -141,8 +135,7 @@ class TaskManager {
             tasksHtmlList.push(taskHtml);
         };
 
-        // Create the tasksHtml by joining each item in the tasksHtmlList
-        // with a new line in between each item.
+        // Create the tasksHtml by joining each item in the tasksHtmlList with a new line in between each item.
         const tasksHtml = tasksHtmlList.join('\n');
 
         // Set the inner html of the tasksList on the page
@@ -160,11 +153,10 @@ class TaskManager {
         const currentId = JSON.stringify(this.currentId);
 
         localStorage.setItem('currentId', currentId);
-
     };
 
 
-    //load method
+    // load method
     load() {
         if (localStorage.getItem('tasks')) {
             const taskJsonStr = localStorage.getItem('tasks');
@@ -179,7 +171,6 @@ class TaskManager {
             //can use JSON.parse
         };
     };
-
 };
 
 

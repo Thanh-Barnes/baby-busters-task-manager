@@ -1,20 +1,22 @@
-// Initialize a new TaskManager with currentId set to 0
+// initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
 
 taskManager.load();
 taskManager.render(taskManager.tasks);
 
-// Select the New Task Form to use when move button into the form
 const newTaskFormButton = document.querySelector('#form-button');
+const updateButton = document.querySelector('#update-button');
+const formModal = document.querySelector('#createNewTask');
 
-// Add an 'onsubmit' event listener
+// add new task
 newTaskFormButton.addEventListener('click', (event) => {
     
-   // Prevent default action
     event.preventDefault();
-    
+
+    // updateButton.classList.add('invisible');
+
+    // checking when all form inputs are valid before submit
     let isValid = false;
-    console.log(isValid)
     
     const tasksFormInputs = document.querySelectorAll('.validateSubmit');
 
@@ -28,26 +30,85 @@ newTaskFormButton.addEventListener('click', (event) => {
     }; 
 
     if (isValid) {
-        // Select the inputs
+        // select the inputs
         const newTaskName = document.querySelector('#task-name-validate');
         const newTaskDescription = document.querySelector('#form-validate-description');
         const newTaskAssigned = document.querySelector('#assigned');
         const newTaskDueDate = document.querySelector('#dueDateInput');
         
-        // Get value of the inputs
+        // get value of the inputs
         const taskName = newTaskName.value;
         const description = newTaskDescription.value;
         const assigned = newTaskAssigned.value;
         const dueDate = newTaskDueDate.value;
-
-        // Add/render/save the task to the task manager
+        
+        // add/render/save the task to the task manager
         taskManager.addTask(taskName, description, assigned, dueDate);
+        taskManager.render(taskManager.tasks);
+        taskManager.save();
+
+        // updateButton.classList.remove('invisible');
+
+        // dismiss modal when update button pressed
+        newTaskFormButton.setAttribute('data-dismiss','modal')
+        
+        // clear the form
+        newTaskName.value = '';
+        newTaskDescription.value = '';
+        newTaskAssigned.value = '';
+        newTaskDueDate.value = '';    
+        formValidateTaskName.classList.remove('is-valid');
+        formValidateDescription.classList.remove('is-valid');
+        assignedTo.classList.remove('is-valid');
+        dueDateInput.classList.remove('is-valid');      
+    };
+});
+
+
+// update button
+updateButton.addEventListener('click', () => {
+
+    // checking when all form inputs are valid before submit
+    let isValid = false;
+    
+    const tasksFormInputs = document.querySelectorAll('.validateSubmit');
+
+    for (let i = 0; i < tasksFormInputs.length; i++) {
+        if (tasksFormInputs[i].classList.contains('is-valid')) {
+            isValid = true;
+        } else {
+            isValid = false;
+            tasksFormInputs[i].classList.add('is-invalid');
+        };
+    }; 
+
+    if (isValid) {
+        // select the inputs
+        const newTaskName = document.querySelector('#task-name-validate');
+        const newTaskDescription = document.querySelector('#form-validate-description');
+        const newTaskAssigned = document.querySelector('#assigned');
+        const newTaskDueDate = document.querySelector('#dueDateInput');
+        
+        // set id of the current task
+        const editTask = document.querySelector('.edit-task');
+        const taskId = Number(editTask.dataset.taskId);
+        const task = taskManager.getTaskById(taskId);
+
+        // update values of the current task
+        task.name = newTaskName.value;
+        task.description = newTaskDescription.value;
+        task.assignedTo = newTaskAssigned.value;
+        task.dueDate = newTaskDueDate.value;
+        task.status = 'TODO';
 
         taskManager.render(taskManager.tasks);
 
+        // update modal form name since using same modal as Create new task
+        formModal.innerHTML = 'Create new task';
+        
         taskManager.save();
 
-        // Clear the form
+        // clear the form
         newTaskName.value = '';
         newTaskDescription.value = '';
         newTaskAssigned.value = '';
@@ -56,14 +117,21 @@ newTaskFormButton.addEventListener('click', (event) => {
         formValidateDescription.classList.remove('is-valid');
         assignedTo.classList.remove('is-valid');
         dueDateInput.classList.remove('is-valid');
+        
+        // dismiss modal when update button pressed
+        updateButton.setAttribute('data-dismiss','modal')
+        newTaskFormButton.classList.remove('invisible')
+        updateButton.classList.add('invisible')
     };
 });
 
+
+// markAsDone/delete/edit buttons
 const tasksList = document.querySelector('#task-list');
 
-// Mark as done button and delete task button
 tasksList.addEventListener('click', (event) => {
 
+    // mark as done task
     if (event.target.classList.contains('done-button')) {
 
         const parentTask = event.target.parentElement.parentElement.parentElement;
@@ -78,59 +146,77 @@ tasksList.addEventListener('click', (event) => {
 
         taskManager.save();
     };
-
+    
+    // delete task
     if (event.target.classList.contains('delete-button')) {
 
         const parentTask = event.target.parentElement.parentElement.parentElement;
-
+        
         const taskId = Number(parentTask.dataset.taskId);
-
+        
         taskManager.deleteTask(taskId);
-
+        
         taskManager.save();
-
+        
         taskManager.render(taskManager.tasks);
     };
-});
 
+    // edit task
+    if (event.target.classList.contains('btn-mark-edit')) {
+        
+        newTaskFormButton.classList.add('invisible');
+        updateButton.classList.remove('invisible');
 
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        parentTask.classList.add('edit-task');
 
+        const taskId = Number(parentTask.dataset.taskId);
+              
+        const task = taskManager.getTaskById(taskId);
+      
+        const currentTaskName = document.querySelector('#task-name-validate');
+        const currentTaskDescription = document.querySelector('#form-validate-description');
+        const currentTaskAssigned = document.querySelector('#assigned');
+        const currentTaskDueDate = document.querySelector('#dueDateInput');
+        
+        // prefill modal inputs with current task details
+        currentTaskName.value = task.name;
+        currentTaskDescription.value = task.description;
+        currentTaskAssigned.value = task.assignedTo;
+        currentTaskDueDate.value = task.dueDate;
+        
+        // update modal form title
+        formModal.innerHTML = 'Edit task';
+        
+        // validate all current task inputs as true
+        let isValid = true;
+        
+        const tasksFormInputs = document.querySelectorAll('.validateSubmit');
+        
+        for (let i = 0; i < tasksFormInputs.length; i++) {
+            tasksFormInputs[i].classList.add('is-valid');
+            tasksFormInputs[i].classList.remove('is-invalid');
+        };   
+    };
+}); 
+    
 
-
-
-
-// assignedTo dropdown - filtered
+// assignedTo droptown in navbar
 const assignedToDropdown = document.querySelector('#assignedToList');
 
-console.log(assignedToDropdown)
-
-
 assignedToDropdown.addEventListener('click', () => {
-    console.log('test')
-    console.log(assignedToDropdown.value)
-    
 
     if (assignedToDropdown.value === 'All') {
         taskManager.render(taskManager.tasks);
-
-        console.log(assignedToDropdown.value)
-
     } 
     else {
         const userTasks = taskManager.getTasksByAssignedTo(assignedToDropdown.value);
         taskManager.render(userTasks);
-        
-        console.log(userTasks)
-        console.log('test3')
     };
 });
 
 
-
-
-
-
-// music- container
+// music container
 let audio = document.getElementById('audio');
 let playPauseBTN = document.getElementById('playPauseBTN');
 let count = 0;

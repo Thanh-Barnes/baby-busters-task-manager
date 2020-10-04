@@ -30,14 +30,14 @@
                           <a class="nav-link text-light" href="#aboutUs">About us</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-light" href="#audio">Music Player</a>
+                          <a class="nav-link text-light" href="#audio">Music</a>
                       </li>
                       <li class="nav-item">
                           <select class="form-control form-assigned-input text-align-left bg-info text-light border-0" id="assignedToList" name="assignedList" required>
                               <option value='All' class="dropdown" >All tasks</option>
-                              <option value='Alessandro' class="dropdown">Alessandro C.</option>
-                              <option value='Jamie' class="dropdown">Jamie K.</option>
-                              <option value='Thanh' class="dropdown">Thanh B.</option>
+                              <option value='Alessandro C.' class="dropdown">Alessandro C.</option>
+                              <option value='Jamie K.' class="dropdown">Jamie K.</option>
+                              <option value='Thanh B.' class="dropdown">Thanh B.</option>
                           </select>
                       </li>
                   </ul>
@@ -85,9 +85,9 @@
                     <label for="assigned-to">Assigned to:</label>
                     <select class="validateSubmit form-control form-assigned-input" id="assigned" name="assigned-to-1" required>
                         <option value='' class="dropdown" disabled selected>Please select</option>
-                        <option value='Alessandro' class="dropdown">Alessandro C.</option>
-                        <option value='Jamie' class="dropdown">Jamie K.</option>
-                        <option value='Thanh' class="dropdown">Thanh B.</option>
+                        <option value='Alessandro C.' class="dropdown">Alessandro C.</option>
+                        <option value='Jamie K.' class="dropdown">Jamie K.</option>
+                        <option value='Thanh B.' class="dropdown">Thanh B.</option>
                     </select>
                   </div>
                   <br>
@@ -99,34 +99,30 @@
               </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button id="form-button" type="button"  class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary align-left" data-dismiss="modal">Cancel</button>
+            <button id="update-button" type="button" class="btn btn-warning invisible">Update</button>
+            <button id="form-button" type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- cards -->
-
-
-
-
     <div class="container pt-3 my-3 border bg-light bg-i text-dark" id="taskcontiner">  
-      <!-- <div  class="row row-cols-md-3"> -->
-        <!-- <div class="col mb-4"> -->
-          <h1 class="toDoList text-dark">TO DO LIST</h1>
-          <div id="task-list">
-          </div>
-        <!-- </div> -->
-      <!-- </div>          -->
+        <h1 class="toDoList text-dark">TO DO LIST</h1>
+        <div id="task-list">
+        </div>
     </div>
-
-
 
     <!-- About us section -->
     <div id="aboutUs" class="container">
         <h2>About us</h2>
-        <p>testing blah blah blah Thanh is great</p>
+        <p>Updated features:</p>
+        <p>- edit existing tasks and if MarkedAsDone, it would reset to TODO</p>
+        <p>- filter by assignedto task-list</p>
+        <p>- background</p>
+
+        <p>Thanh to update music player to current </p>
     </div>
 
     <!-- Music Player -->
