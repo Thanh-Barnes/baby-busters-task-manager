@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 body {
-<<<<<<< HEAD
-    background-image: url('background5.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 1200px;
-=======
     /* background-image: url('background-image/background1.jpg'); */
     /* background-image: url('background-image/background2.png'); */
     /* background-image: url('background-image/background3.png'); */
@@ -15,7 +9,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: max-content;
->>>>>>> 33ac11f6a265f72c7d99410aa2eae1a2d3697e09
 }
 
 .goTitle {
@@ -28,6 +21,8 @@ body {
 .noTaskMsg {
     text-align: center;
     font-style: italic;
+    padding-top: 2em;
+    
 }
 
 .form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {
@@ -87,9 +82,6 @@ h1 {
 }
 
 footer {
-<<<<<<< HEAD
-    height: 100px;
-=======
     /* display: inline;
     position: fixed;
     left: 0;
@@ -97,13 +89,12 @@ footer {
     width: 100%; */
     height: 100px;
     margin-bottom: 5em;
->>>>>>> 33ac11f6a265f72c7d99410aa2eae1a2d3697e09
 }
 
 .website-footer {
     display: flex;
     flex-direction: column;
-    padding: 3em 0em 2em 0em;
+    padding: 3em 0em 1em 0em;
     margin-top: 0em;
     margin-bottom: 0em;
 }

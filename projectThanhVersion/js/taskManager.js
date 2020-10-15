@@ -36,6 +36,9 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
     return html;
 };
 
+const noTaskMsg = document.querySelector('.noTaskMsg');
+const noTaskMsgHtml = noTaskMsg.innerHTML;
+
 // Create a TaskManager class
 class TaskManager {
     constructor(currentId = 0) {
@@ -115,6 +118,14 @@ class TaskManager {
     render(tasksArray) {
         // create array to store tasks
         const tasksHtmlList = [];
+
+        if (tasksArray.length > 0) {
+            noTaskMsg.innerHTML = '';
+        
+        } else if (tasksArray.length === 0) {
+            noTaskMsg.innerHTML = noTaskMsgHtml;
+        };
+            
 
         // create a loop, refer to this.tasks array
         for (let i = 0; i < tasksArray.length; i++) {
