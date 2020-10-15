@@ -41,6 +41,11 @@ textarea {
     height: 1000px;
 }
 
+.teamModal {
+    display:flex;
+    justify-content: space-around;
+}
+
 /* .taskcontainer {
     height: 3000px;
     display: flex;
@@ -48,8 +53,8 @@ textarea {
     padding-top: 2em;
 } */
 
-.container {
-    min-height: 860px;
+#taskcontainer {
+    min-height: 900px;
 }
 
 .containerAbout {
@@ -79,7 +84,15 @@ h1 {
 }
 
 .music-button-style {
-    width:5rem;
+    width: 7rem;
+}
+
+#backtothop {
+    display: block; 
+    text-align: center;
+    justify-content: center;
+    padding: 2em 0em;
+   
 }
 
 footer {
