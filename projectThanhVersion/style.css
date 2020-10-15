@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 body {
-<<<<<<< HEAD
-    background-image: url('background5.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 1200px;
-=======
     /* background-image: url('background-image/background1.jpg'); */
     /* background-image: url('background-image/background2.png'); */
     /* background-image: url('background-image/background3.png'); */
@@ -15,7 +9,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: max-content;
->>>>>>> 33ac11f6a265f72c7d99410aa2eae1a2d3697e09
 }
 
 .goTitle {
@@ -37,6 +30,7 @@ body {
 
 #assignedToList {
     padding-left: 0;
+    margin: 0 auto;
 }
 
 /* to fix box size */
@@ -56,6 +50,10 @@ textarea {
     min-height: 900px;
 }
 
+.containerAbout {
+    display: contents;
+}
+
 
 h1 {
     text-align: center;
@@ -63,10 +61,6 @@ h1 {
 
 .displayNone {
     display: none;
-}
-
-#aboutUs {
-    text-align: center;
 }
 
 .music-player-title {
@@ -87,9 +81,6 @@ h1 {
 }
 
 footer {
-<<<<<<< HEAD
-    height: 100px;
-=======
     /* display: inline;
     position: fixed;
     left: 0;
@@ -97,7 +88,6 @@ footer {
     width: 100%; */
     height: 100px;
     margin-bottom: 5em;
->>>>>>> 33ac11f6a265f72c7d99410aa2eae1a2d3697e09
 }
 
 .website-footer {
@@ -144,3 +134,7 @@ footer {
     left: 0px;
     right: 0px;
 } */
+
+.row {
+    scroll-margin-inline: 0;
+}
