@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 body {
     /* background-image: url('background-image/background1.jpg'); */
-    background-image: url('background-image/background2.png');
+    /* background-image: url('background-image/background2.png'); */
     /* background-image: url('background-image/background3.png'); */
     /* background-image: url('background-image/background4.png'); */
     /* background-image: url('background-image/background5.jpg'); */
-    /* background-image: url('background-image/background6.jpg'); */
+    background-image: url('background-image/background6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: max-content;
@@ -46,10 +46,6 @@ textarea {
     justify-content: space-around;
 }
 
-/* .teamCard {
-    width: 100px;
-} */
-
 /* .taskcontainer {
     height: 3000px;
     display: flex;
@@ -57,13 +53,14 @@ textarea {
     padding-top: 2em;
 } */
 
-.container {
-    min-height: 860px;
+#taskcontainer {
+    min-height: 900px;
 }
 
 .containerAbout {
     display: contents;
 }
+
 
 h1 {
     text-align: center;
@@ -87,7 +84,15 @@ h1 {
 }
 
 .music-button-style {
-    width:7rem;
+    width: 7rem;
+}
+
+#backtothop {
+    display: block; 
+    text-align: center;
+    justify-content: center;
+    padding: 2em 0em;
+   
 }
 
 footer {
