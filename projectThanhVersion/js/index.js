@@ -4,6 +4,7 @@ const taskManager = new TaskManager(0);
 taskManager.load();
 taskManager.render(taskManager.tasks);
 
+// IF WANT TO CREATE AN OBJECT (MYAPP - USE MYAPP.PROPERTY) TO STORE ALL GLOBAL VARIABLES - WILL NEED TO RENAME ALL VARIABLE REFERENCES
 const newTaskFormButton = document.querySelector('#form-button');
 const updateButton = document.querySelector('#update-button');
 const formModal = document.querySelector('#createNewTask');
@@ -12,8 +13,6 @@ const formModal = document.querySelector('#createNewTask');
 newTaskFormButton.addEventListener('click', (event) => {
     
     event.preventDefault();
-
-    // updateButton.classList.add('invisible');
 
     // checking when all form inputs are valid before submit
     let isValid = false;
@@ -46,8 +45,6 @@ newTaskFormButton.addEventListener('click', (event) => {
         taskManager.addTask(taskName, description, assigned, dueDate);
         taskManager.render(taskManager.tasks);
         taskManager.save();
-
-        // updateButton.classList.remove('invisible');
 
         // dismiss modal when update button pressed
         newTaskFormButton.setAttribute('data-dismiss','modal')
@@ -126,6 +123,14 @@ updateButton.addEventListener('click', () => {
 });
 
 
+// CANCEL BUTTON TO SET VALUES TO CURRENT VALUES - DO EVENT LISTENER
+//
+//
+
+
+
+
+
 // markAsDone/delete/edit buttons
 const tasksList = document.querySelector('#task-list');
 
@@ -156,9 +161,10 @@ tasksList.addEventListener('click', (event) => {
         
         taskManager.deleteTask(taskId);
         
+        taskManager.render(taskManager.tasks);
+        
         taskManager.save();
         
-        taskManager.render(taskManager.tasks);
     };
 
     // edit task

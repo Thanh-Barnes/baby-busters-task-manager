@@ -98,7 +98,7 @@
                   </div>
               </form>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer modal-buttons">
             <button type="button" class="btn btn-secondary align-left" data-dismiss="modal">Cancel</button>
             <button id="update-button" type="button" class="btn btn-warning invisible">Update</button>
             <button id="form-button" type="button" class="btn btn-primary">Submit</button>
@@ -110,17 +110,25 @@
     <!-- cards -->
     <div class="container pt-3 my-3 border-0 bg-i text-dark" id="taskcontiner">  
         <h1 class="toDoList text-dark">TO DO LIST</h1>
+
+
+
+    <!-- CREATE FN TO SHOW THIS MESSAGE WHEN THERE ARE NO TASKS     -->
+        <!-- <h3 class="noTaskMsg">** There are currently no tasks **</h3> -->
         <div id="task-list">
         </div>
     </div>
 
     <!-- About us section -->
+    <br>
     <div id="aboutUs" class="container">
         <h2>About us</h2>
         <p>Updated features:</p>
         <p>- edit existing tasks and if MarkedAsDone, it would reset to TODO</p>
         <p>- filter by assignedto task-list</p>
-        <p>- background</p>
+        <p>- background
+        <p>- fixed null bug, was in save method converting currentid was set to string instead of number.</p>
+        </p>
 
         <p>Thanh to update music player to current, footer icons to be black? </p>
     </div>

@@ -12,6 +12,12 @@ body {
     justify-content: space-around;
 }
 
+.noTaskMsg {
+    text-align: center;
+    font-style: italic;
+
+}
+
 .form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {
     background-image: none;
     padding-right: inherit;

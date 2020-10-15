@@ -16,7 +16,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 
             <div class="row pt-2">
                 <div class="col">
-                    <div class="status-box alert ${status === 'TODO' ? 'alert-warning' : 'alert-success'}">
+                    <div class="status-box text-center alert ${status === 'TODO' ? 'alert-warning' : 'alert-success'}">
                         <a><strong>Status:</strong>&nbsp;${status}</a>
                     </div>
                 </div>
@@ -167,8 +167,7 @@ class TaskManager {
         if (localStorage.getItem('currentId')) {
             const currentIdStr = localStorage.getItem('currentId');
 
-            this.currentId = String(currentIdStr);
-            //can use JSON.parse
+            this.currentId = Number(currentIdStr);
         };
     };
 };
