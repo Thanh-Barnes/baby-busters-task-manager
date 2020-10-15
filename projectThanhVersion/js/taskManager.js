@@ -2,7 +2,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 
     const html =
         `
-        <div id="task-list" class="card h-100 p-3 my-3" data-task-id=${id}>
+        <div id="task-list" class="card shadow h-100 p-3 my-3" data-task-id=${id}>
             <div class="row pl-2 pb-2">
                 <div class="col-md-9 col-sm-8 text-left">
                     <h5 class="card-title">${name}</h5>

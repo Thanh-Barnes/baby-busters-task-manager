@@ -19,7 +19,7 @@
   </head>
   <body>
       <!-- navbar -->
-      <nav class="navbar navbar-expand-md bg-info navbar-dark">
+      <nav class="navbar shadow navbar-expand-md bg-info navbar-dark" id=navigationbar>
           <div class="col-sm-4 justify-content-left">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
@@ -30,15 +30,10 @@
                           <a class="btn text-light pl-0" data-toggle="modal" data-target="#aboutUs">Team</a>  
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-light" href="#audioheader">Music</a>
+                          <a class="nav-link text-light pl-5 mr-0" href="#audioheader">Music</a>
                       </li>
-<<<<<<< HEAD
-                      <li class="nav-item ml-3">
-                          <select class="form-control form-assigned-input text-align-left bg-info text-light border-0" id="assignedToList" name="assignedList" required>
-=======
                       <li class="nav-item">
                           <select class="form-control form-assigned-input text-align-left bg-info text-light border-0 ml-5" id="assignedToList" name="assignedList" required>
->>>>>>> c990d22ca559d238f63570f36ecf9379319c9916
                               <option value='All' class="dropdown" >All tasks</option>
                               <option value='Alessandro C.' class="dropdown">Alessandro C.</option>
                               <option value='Jamie K.' class="dropdown">Jamie K.</option>
@@ -54,8 +49,8 @@
 
           <!-- Button trigger modal -->
           <div class="col-sm-4">
-              <button type="button" class="btn btn-dark text-light float-right" data-toggle="modal" data-target="#exampleModalCenter">
-                  <i class="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;Task
+              <button type="button" class="addTaskBtn btn btn-dark text-light float-right" data-toggle="modal" data-target="#exampleModalCenter">
+                  <i class="fas fa-plus-circle fa-lg"></i>&nbsp;&nbsp;ADD TASK
               </button>  
           </div>
       </nav>
@@ -70,7 +65,7 @@
             <h2>Meet the team</h2>
           </div>
           <div>
-            <div class='container'>
+            <div class='container modalContainer'>
               <div class="row teamModal">
                 <!-- Thanh -->
                 <div class="col-xl-4 my-3">
@@ -98,10 +93,11 @@
                 <div class="col-xl-4 my-3">
                   <div class="teamCard card border-0 shadow">
                     <img src="../projectThanhVersion/team-photos/alex2.jpg" class="card-img-top" alt="Alessandro photo">
-                    <div class="card-body text-center">
+                    <div class="card-body h-800 text-center">
                       <h5 class="card-title mb-0">Alessandro</h5>
                       <div class="card-text text-black-50"><strong>Web Developer</strong></div>
-                      <div class="card-text text-black-50"><em>"I Love everything related to Technology, Food and Nature. <br> My superpowers: attention to details and motivation.<br>Motto: 'mens sana in corpore sano'."</em> </div>
+                      <!-- end of next time used <br> -->
+                      <div class="card-text text-black-50"><em>"I Love everything related to Technology, Food and Nature. <br> My superpowers: attention to details and motivation.<br>Motto: 'mens sana in corpore sano'."</em> <br><br></div>
                     </div>
                   </div>
                 </div>   
@@ -170,7 +166,7 @@
 
     <!-- cards -->
     <div class="container pt-3 my-3 border-0 bg-i text-dark" id="taskcontainer">  
-        <h1 class="toDoList text-dark">TO DO LIST</h1>
+        <h1 class="toDoList text-dark pt-4">TO DO LIST</h1>
 
 
 
@@ -204,6 +200,12 @@
     <script src="js/taskManager.js"></script>  
     <script src="js/index.js"></script>
   </body>
+
+  <div class="reference" id="backtotop">
+    <a class="text-dark pt-5" href="#navigationbar">Back to top</a>
+  </div>
+
+
   <footer>
     
     <div class="website-footer">
