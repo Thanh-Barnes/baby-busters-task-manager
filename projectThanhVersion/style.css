@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 body {
-    background-image: url('background.jpg');
+    background-image: url('background5.png');
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 1200px;
 }
 
 .goTitle {
@@ -15,7 +16,6 @@ body {
 .noTaskMsg {
     text-align: center;
     font-style: italic;
-
 }
 
 .form-assigned-input.is-valid, .form-assigned-input.is-invalid, .form-dueDate-input.is-invalid, .form-dueDate-input.is-valid {
@@ -40,8 +40,17 @@ textarea {
     padding-top: 2em;
 } */
 
+.container {
+    min-height: 900px;
+}
+
+
 h1 {
     text-align: center;
+}
+
+.displayNone {
+    display: none;
 }
 
 #aboutUs {
@@ -63,6 +72,10 @@ h1 {
 
 .music-button-style {
     width:5rem;
+}
+
+footer {
+    height: 100px;
 }
 
 .website-footer {

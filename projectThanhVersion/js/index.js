@@ -9,11 +9,12 @@ const newTaskFormButton = document.querySelector('#form-button');
 const updateButton = document.querySelector('#update-button');
 const formModal = document.querySelector('#createNewTask');
 
+
 // add new task
 newTaskFormButton.addEventListener('click', (event) => {
     
     event.preventDefault();
-
+   
     // checking when all form inputs are valid before submit
     let isValid = false;
     
@@ -117,18 +118,39 @@ updateButton.addEventListener('click', () => {
         
         // dismiss modal when update button pressed
         updateButton.setAttribute('data-dismiss','modal')
-        newTaskFormButton.classList.remove('invisible')
-        updateButton.classList.add('invisible')
+
+        
+        newTaskFormButton.classList.remove('displayNone')
+        updateButton.classList.add('displayNone')
     };
 });
 
 
-// CANCEL BUTTON TO SET VALUES TO CURRENT VALUES - DO EVENT LISTENER
-//
-//
+// cancel form buttons
+const cancelForm = (event) => {
+    const newTaskName = document.querySelector('#task-name-validate');
+    const newTaskDescription = document.querySelector('#form-validate-description');
+    const newTaskAssigned = document.querySelector('#assigned');
+    const newTaskDueDate = document.querySelector('#dueDateInput');
+
+    formModal.innerHTML = 'Create new task';
+
+    newTaskName.value = '';
+    newTaskDescription.value = '';
+    newTaskAssigned.value = '';
+    newTaskDueDate.value = '';    
+    formValidateTaskName.classList.remove('is-valid');
+    formValidateDescription.classList.remove('is-valid');
+    assignedTo.classList.remove('is-valid');
+    dueDateInput.classList.remove('is-valid');
 
 
+    newTaskFormButton.classList.remove('displayNone')
+    updateButton.classList.add('displayNone')
+};
 
+document.querySelector('.cancel').addEventListener('click', cancelForm);
+document.querySelector('.cancelx').addEventListener('click', cancelForm);
 
 
 // markAsDone/delete/edit buttons
@@ -167,11 +189,12 @@ tasksList.addEventListener('click', (event) => {
         
     };
 
+   
     // edit task
     if (event.target.classList.contains('btn-mark-edit')) {
         
-        newTaskFormButton.classList.add('invisible');
-        updateButton.classList.remove('invisible');
+        newTaskFormButton.classList.add('displayNone');
+        updateButton.classList.remove('displayNone');
 
         const parentTask = event.target.parentElement.parentElement.parentElement;
         parentTask.classList.add('edit-task');
