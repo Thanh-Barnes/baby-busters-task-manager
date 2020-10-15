@@ -1,2 +1,2 @@
-Wow! We have our app is ready to launch!
+Wow! Our app is ready to launch!
 
