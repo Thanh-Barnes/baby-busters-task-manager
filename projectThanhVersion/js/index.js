@@ -119,7 +119,8 @@ updateButton.addEventListener('click', () => {
         // dismiss modal when update button pressed
         updateButton.setAttribute('data-dismiss','modal')
 
-        
+        newTaskFormButton.classList.toggle('displayNone')
+
         newTaskFormButton.classList.remove('displayNone')
         updateButton.classList.add('displayNone')
     };

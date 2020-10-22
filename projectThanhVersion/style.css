@@ -46,6 +46,7 @@ textarea {
 .addTaskBtn {
     width: 8.5rem;
     height: 3rem;
+    /* margin-right: -1rem; */
 }
 
 .teamModal {
